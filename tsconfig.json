@@ -21,7 +21,8 @@
     "noUncheckedSideEffectImports": true,
 
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": ["./src/*"],
+      "#tailwindcss/*": ["./dist/tailwindcss/*"]
     }
   },
   "include": ["src"]

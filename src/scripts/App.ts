@@ -3,6 +3,7 @@ import registerStoreModules from '~/scripts/store'
 import registerDirectives from '~/scripts/directives'
 import registerComponents from '~/scripts/components'
 import registerMagics from '~/scripts/magics'
+import screens from '#tailwindcss/screens.json'
 
 export default function App() {
   globalThis.Alpine = Alpine
@@ -11,6 +12,8 @@ export default function App() {
   registerStoreModules()
   registerDirectives()
   registerComponents()
+
+  console.log('This is the list of screens:', Object.keys(screens).toString())
 
   document.addEventListener('alpine:initialized', () => {
     // Make Alpine's store available globally
