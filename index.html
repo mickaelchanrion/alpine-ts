@@ -1,13 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Alpine + TypeScript = ❤️</title>
   </head>
-  <body>
-    <div x-data id="app"></div>
+  <body class="flex min-h-screen items-center justify-center">
+    <div x-data="Demo">
+      <button
+        x-cloak
+        x-text="buttonLabel"
+        class="rounded border border-stone-600 px-2 py-1"
+        @click="onClick"
+      ></button>
+      <picture
+        class="mt-6 block bg-stone-100 dark:bg-stone-950"
+        x-image-in="{ onLoad: () => console.log('image loaded') }"
+      >
+        <img
+          src="https://picsum.photos/300/200"
+          width="300"
+          height="200"
+          loading="lazy"
+        />
+      </picture>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

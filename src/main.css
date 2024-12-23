@@ -3,8 +3,28 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    background-color: white;
+    color: theme('colors.neutral.800');
+
+    &.dark {
+      background-color: theme('colors.neutral.900');
+      color: white;
+    }
+  }
   [x-cloak] {
     display: none !important;
   }
-}
+
+  /* img defaults: https://x.com/csswizardry/status/1717841334462005661?s=20 */
+  img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-style: italic;
+  }
+
+  img[x-image-in],
+  [x-image-in] img {
+    visibility: hidden;
+  }
 }
