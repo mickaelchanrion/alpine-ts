@@ -90,8 +90,11 @@ To create a new module, you need to create a new file in the store folder. The f
 // ./src/scripts/store/myModule.ts
 const myModule = {
   foo: null,
-  setFoo(state, value) {
-    state.foo = value
+  bar() {
+    // do something
+  },
+  get baz() {
+    // get something
   },
   init() {
     // Function called when the store module is initialized
@@ -117,7 +120,7 @@ import { defineComponent } from '~/utils/alpine'
 
 export default defineComponent(() => ({
   init() {
-  console.log(this.$store.myModule.foo) // yay! 💪
+    console.log(this.$store.myModule.foo) // yay! 💪
   }
 })
 ```
